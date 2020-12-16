@@ -18,7 +18,7 @@
       if ( empty($name) || empty($email) || empty($age)) {
           echo "not validate beacuse one of the three value is empty";
          
-       } else if(strlen($name) < 3){
+       } else if(strlen($name) <= 3){
            echo "name = $name. </br> validate the name is inferior a three word";
        } else if((strpos($email, "@") === false) || (strpos($email, ".") === false)){
            echo "mail = $email. </br> not validate must contain @ and .";
