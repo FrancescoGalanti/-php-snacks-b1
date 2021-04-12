@@ -8,15 +8,22 @@
 <body>
 
     <?php
-       $name = $_GET["name"];
-       $email = $_GET["email"];
-       $age = $_GET["age"];
+       $name = empty($_GET["name"]) ? false : $_GET["name"];
+       $email = empty($_GET["email"]) ? false : $_GET["email"];
+       $age =  empty($_GET["age"]) ? false : $_GET["age"];
+
+      /*  echo "$name <br/>"; */
+
     
      
 
       // validation
-      if ( empty($name) || empty($email) || empty($age)) {
+      if ( empty($name) || empty($email)  || empty($age)) {
           echo "not validate beacuse one of the three value is empty";
+          $name = null;
+          $email = null;
+          $age = null;
+          
          
        } else if(strlen($name) <= 3){
            echo "name = $name. </br> validate the name is inferior a three word";
